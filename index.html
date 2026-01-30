@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keelan MonNom — Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --panel: #121923;
+      --text: #e6eaf0;
+      --muted: #9aa4b2;
+      --accent: #4fd1c5;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: radial-gradient(circle at 20% 20%, #101826 0%, #0b0f14 60%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+
+    header {
+      padding: 4rem 1.5rem 3rem;
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      background: #1a2230;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      letter-spacing: 0.05em;
+    }
+
+    .subtitle { color: var(--muted); margin-top: .5rem; }
+
+    .contact {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+    }
+
+    .chip {
+      border: 1px solid var(--border);
+      padding: .5rem .8rem;
+      border-radius: 8px;
+      background: var(--panel);
+      font-size: .9rem;
+    }
+
+    .btn-cv {
+      background: linear-gradient(135deg, #4fd1c5, #63b3ed);
+      color: #0b0f14;
+      font-weight: bold;
+      border: none;
+    }
+
+
+    .btn-cv:hover { opacity: .85; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(6px);
+      background: rgba(11,15,20,0.85);
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      gap: 1.5rem;
+      padding: .8rem 1.5rem;
+      overflow-x: auto;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+    }
+
+    h2 {
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+      letter-spacing: .08em;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.3rem;
+      transition: transform .2s ease, border .2s ease;
+    }
+
+    .card:hover { transform: translateY(-4px); border-color: var(--accent); }
+
+    .skills span {
+      display: inline-block;
+      margin: .4rem;
+      padding: .45rem .7rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #0f1622;
+      font-size: .85rem;
+    }
+
+    details {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 1rem 1.2rem;
+      font-weight: bold;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    .projects {
+      padding: 1rem 1.2rem 1.5rem;
+      border-top: 1px solid var(--border);
+      display: grid;
+      gap: 1rem;
+    }
+
+    .project {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      background: #0f1622;
+    }
+
+    .media {
+      margin-top: .8rem;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #1b2433;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    @media (max-width: 600px) {
+      header { grid-template-columns: 1fr; text-align: center; }
+      .contact { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header id="top">
+  <img src="images/profile.jpg" alt="Photo de profil" class="avatar" />
+  <div>
+    <h1>Keelan Soulard</h1>
+    <div class="subtitle">Étudiant en informatique — développement logiciel & systèmes</div>
+    <p>Passionné par le développement informatique depuis la 5e. J'aime transformer des problèmes concrets en solutions informatiques propres et efficaces.</p>
+    <div class="contact">
+      <div class="chip">keelan.soulard@proton.me</div>
+      <div class="chip">+33 7 67 41 85 50</div>
+      <a class="chip btn-cv" href="images/cv.pdf" download>Télécharger mon CV</a>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#skills">Capacités</a>
+    <a href="#path">Parcours</a>
+    <a href="#projects">Projets</a>
+    <a href="#top">Home</a>
+  </div>
+</nav>
+
+<section id="skills">
+  <h2>CAPACITÉS TECHNIQUES</h2>
+  <div class="grid-two">
+    <div class="card skills">
+      <strong>Langages</strong><br />
+      <span>Python</span><span>Go</span><span>Luaa</span><span>SQL</span><span>Kotlin</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
+    </div>
+    <div class="card skills">
+      <strong>Outils</strong><br />
+      <span>Git</span><span>Roblox Studio</span><span>VS Code</span><span>Linux / Terminal</span>
+    </div>
+  </div>
+</section>
+
+<section id="path">
+  <h2>PARCOURS</h2>
+  <div class="grid-two">
+    <div class="card">Voie générale — spécialités Physique, NSI, Mathématiques<br /><em>Obtention du BAC Mention Très Bien - Maths / NSI</em></div>
+    <div class="card">BUT Informatique — 1re année<br /><em>IUT de Nantes</em></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>PROJETS</h2>
+
+  <details open>
+    <summary>Projets académiques</summary>
+    <div class="projects">
+      <div class="project">
+        <strong>Générateur de particules (Go)</strong>
+        <p>Le projet consiste à partir d'une particule simple affichée à l'écran pour la faire évoluer vers un système capable de simuler différentes configurations physiques complexes.
+
+Le générateur implémente des collisions avancées entre particules en prenant en compte leur orientation, et pas uniquement leur position. La détection de collision repose notamment sur le théorème SAT (Separating Axis Theorem), couplé à des formules de dynamique pour gérer les réponses physiques réalistes.
+
+Afin d'améliorer l'interaction utilisateur, un panneau de configuration dynamique a été développé, permettant de modifier en temps réel les paramètres de la simulation (nombre de particules, vitesses, comportements, etc.).</p>
+        <video class="media" controls>
+            <source src="images/particules.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+      </div>
+      <div class="project">
+        <strong>Simulateur de kebab</strong>
+        <p>Projet de simulation interactive visant à reproduire le fonctionnement d'un stand de kebab en temps réel. Le système gère les commandes clients, la préparation des ingrédients, les temps de cuisson et la gestion des priorités afin d'optimiser le flux de service. L'objectif était de modéliser une situation concrète à l'aide de structures algorithmiques efficaces et d'une logique événementielle claire.</p>
+        <img class="media" src="images/kebab.png" alt="Simulation kebab" />
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Projets personnels</summary>
+    <div class="projects">
+      <div class="project">
+        <strong>Tutoriel SDS - Roblox</strong>
+        <p>Développement d'un système de tutoriel interactif destiné à accompagner les joueurs dans la prise en main du jeu SDS. Le tutoriel guide progressivement l'utilisateur à travers différentes mécaniques de gameplay à l'aide d'interfaces dynamiques, de déclencheurs événementiels et d'une logique modulaire pensée pour être facilement extensible. Une attention particulière a été portée à l'optimisation côté client afin de garantir fluidité et réactivité.</p>
+        <img class="media" src="images/tutoriel.png" alt="Tutoriel SDS Roblox" />
+      </div>
+      <div class="project">
+        <strong>Optimisations diverses</strong>
+        <p>Ensemble de missions visant à analyser puis améliorer les performances de systèmes existants, aussi bien en termes de temps d'exécution que de consommation de ressources. Ces optimisations passent par la refonte d'algorithmes, la réduction des accès inutiles, une meilleure gestion de la mémoire et la simplification de certaines logiques métiers. L'objectif est d'obtenir des systèmes plus robustes, maintenables et scalables.</p>
+        <img class="media" src="images/opti.png" alt="Optimisations de systèmes" />
+      </div>
+    </div>
+  </details>
+
+</section>
+
+<footer>
+  © Keelan MonNom — Portfolio
+</footer>
+
+</body>
+</html>
